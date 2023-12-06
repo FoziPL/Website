@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Portfolio Thomas King</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;500;600;700&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<style>
+			body {
+				margin : 0vw;
+				padding : 0vw;
+				z-index: 1;
+				font-family: Comfortaa;
+				background-color: lightgrey;
+			}
+			h1 {
+				font-weight: 1200;
+				font-style: italic;
+			}
+			h2 {
+				font-weight: 600;
+				font-style: italic;
+			}
+			h3 {
+				font-weight: 550;
+				font-style: italic;
+			}
+			.topNav {
+				background-color: rgb(47, 47, 51);
+				position: fixed;
+				z-index: 2;
+				top: 0;
+				width: 100%;
+			}
+			.navBar ol {
+				list-style-type: none;
+				margin: 0vw;
+				padding: 0vw;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-left: 5%;
+			}
+			.navBar li {
+				margin-left: 2vw;
+				padding: 0.2vw;
+				flex: auto;
+			}
+			.navBar a {
+				border-radius : 3px;
+				color : lightgrey;
+				text-decoration: none;
+				font-size: 1vw;
+			}
+			.navBar a:hover {
+				color: lightsteelblue;
+				border-radius : 3px;
+				padding-top: 0.2vw;
+				padding-bottom: 0.2vw;
+			}
+			.image-title img {
+				width: 100%;
+			}
+			.image-title .text-title {
+				background-color: rgba(47, 47, 51, 0.295);
+				z-index: 1;
+				position: absolute;
+				text-align: center;
+				left: 42vw;
+				right: 42vw;
+				top: 20vw;
+				bottom: 25vw;
+				border-radius: 2vw;
+			}
+			.aboutMe h1, .dev h1, .power h1 {
+				margin-left: 3%;
+			}
+			.aboutMe h2, .aboutMe h3 {
+				margin-left: 2%;
+			}
+			.aboutMe p {
+				margin-left: 10%;
+				margin-right: 5%;
+			}
+			.aboutMeBox {
+				margin-top: 2vw;
+			}
+			.aboutMeBox table {
+				margin-left: 5%
+			}
+			.dev h2, .dev ul, .devText, .devForma {
+				margin-left: 5%;
+			}
+			.project {
+				display: flex;
+				margin-left: 3%;
+			}
+			.project p {
+				margin-left: 5%;
+			}
+			div.projectBox {
+				width: 20%;
+				background-color: white;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 5px 15px 0 rgba(0, 0, 0, 0.15);
+				margin-left: 10%;
+				margin-top: 3%;
+			}
+			div.projectText {
+				background-color: lightsteelblue;
+				/*background-color: rgba(47, 47, 51, 0.485);*/
+				text-align: center;
+				padding: 10px 20px;
+			}
+			.projectBoxHover a {
+				text-decoration: none;
+				color: black;
+			}
+			.projectBoxHover {
+				position: relative;
+				width: 100%;
+			}
+			.image {
+				opacity: 1;
+				display: block;
+				width: 100%;
+				height: auto;
+				transition: .5s ease;
+				backface-visibility: hidden;
+			}
+			.spawn {
+				transition: .5s ease;
+				opacity: 0;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				-ms-transform: translate(-50%, -50%)
+			}
+			.projectBoxHover:hover .image {
+  				opacity: 0.3;
+			}
+
+			.projectBoxHover:hover .spawn {
+				opacity: 1;
+			}
+			.text {
+				border-radius: 20px;
+				background-color: rgb(136, 136, 139);
+				color: white;
+				font-size: 16px;
+				padding: 16px 32px;
+			}
+			.footer {
+				background-color: rgb(47, 47, 51);
+				color: black;
+				width: 100%;
+				height: 3vw;
+			}
+			.footer ul {
+				list-style-type: none;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.footer li {
+				text-decoration: none;
+				margin-left: 2vw;
+				margin-top: 15%;
+			}
+			.footer a {
+				color : lightgrey;
+				font-size: 2vw;
+			}
+			.border-title {
+				background-color: rgb(47, 47, 51);
+				height: 0.5vw;
+				width: 22vw;
+				margin-top: -0.5vw;
+				margin-left: 2%;
+				border-radius: 20px;
+			}
+			.border-subTitle {
+				background-color: GREY;
+				height: 0.5vw;
+				width: 12vw;
+				margin-top: -0.5vw;
+				margin-left: 5%;
+				border-radius: 20px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="topNav">
+			<nav class = "navBar">
+				<ol>
+					<li><a href="#">Acceuil</a></li>
+					<li><a href="#me">A propos de moi</a></li>
+					<li><a href="#prog">Programmation</a></li>
+					<li hidden><a href="#pl">Powerlifting</a></li>
+				</ol>
+			</nav>
+		</div>
+		<div class="image-title">
+			<img src="fond.jpeg" alt="image de moi">
+			<div class="text-title">
+				<h1>Thomas King</h1>
+			</div>
+		</div>
+		<div id="me" class = "aboutMe">
+			<h1>A propos de moi</h1>
+			<div class = "border-title"></div>
+			<div class="aboutMeBox">
+				<table>
+					<td rowspan="5" width = "25%">
+						<img src="me.jpg" alt="" height="max-content" width="100%">
+					</td>
+					<td>
+						<h2>Qui suis-je ?</h2>
+						<div class="border-subTitle"></div>
+					</td>
+					<tr>
+						<td><p>Je suis un étudiant en développement informatique à Loudun, je suis une personne qui aime apprendre de nouvelle chose surtout dans mes différentes passions. Je suis une personne d'assez doué qui aprrcie travailller en équipe et participer à des projets de groupe. Au cours des précédentes années de ma vie j'ai pu parcourir énormément de choses différentes qui ont permis m'ont évolution qui m'ont mener où j'en suis maintenant.</p></td>
+						<td><img src="prog.jpeg" height="max-content" width="35%" alt=""></td>
+					</tr>
+					<tr>
+						<td>
+							<h3>Mes hobbies et passions</h3>
+							<div class="border-subTitle"></div>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Je suis aussi un grand fan de moto, c'est une passion que je pratique pour le plaisir, je n'ai pas d'objectif de competiton, cependant cela m'intéresse fortement de pouvoir donner tout ce que je possède sur un circuit.</p>
+						</td>
+						<td>
+							<img src="moto.jpg" height="max-content" width="35%" alt="">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<p>Parmis mes différents hobbies, je peux citer le Powerlifting qui est une spécification dans la musculation, je pratique ce sport dans l'optique d'un jour être une personne importante dans se domaine.</p>
+						</td>
+						<td>
+							<img src="power.jpeg" height="max-content" width="35%" alt="">
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div id="prog" class = "dev">
+			<h1>Programmation</h1>
+			<div class = "border-title"></div>
+			<h2>Mes différents projets</h2>
+			<div class="border-subTitle"></div>
+			<div class="project">
+				<div class="projectBox">
+					<div class="projectText">
+						<p>Ce Portfolio</p>
+					</div>
+					<div class="projectBoxHover">
+						<img src="coming-soon.jpeg" alt="" class="image" style="width:100%">
+						<div class="spawn">
+						  <div class="text"><a href="">Github</a></div>
+						</div>
+					</div>
+				</div>
+				<div class="projectBox">
+					<div class="projectText">
+						<p>Application de PowerLifting</p>
+					</div>
+					<div class="projectBoxHover">
+						<img src="coming-soon.jpeg" alt="" class="image" style="width:100%">
+						<div class="spawn">
+						  <div class="text"><a href="">Github</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2>Mes formations</h2>
+			<div class="border-subTitle"></div>
+			<ul>
+				<li><h3>Lycée Sadi Carnot Jean-Bertin</h3></li>
+				<p class="devForma">J'ai effectué mes deux années dans ce lycée en tant qu'étudiant en filière générale, j'avais fait le cghoix de prendre les options Mathématique et N.S.I.</p>
+				<li><h3>Lycée Guy Chauvet</h3></li>
+				<p class="devForma">Je suis actuelement en BTS SIO option SLAM.</p>
+				<li hidden><h3>License Pro</h3></li>
+				<p hidden>J'ai fait ça ça et ça</p>
+			</ul>
+			<h2>Mes certifications</h2>
+			<div class="border-subTitle"></div>
+			<ul>
+				<li>Javascript (en cours d'aquisition)</li>
+				<li>Cybersécurité</li>
+			</ul>
+		</div>
+		<div id="pl" class = "power" hidden>
+			<h1>Powerlifting</h1>
+			<h2>Palmarès</h2>
+			<div class="border-subTitle"></div>
+			<ul>
+				<li>Test</li>
+				<li>Test</li>
+				<li>Test</li>
+				<li>Test</li>
+				<li>Test</li>
+			</ul>
+			<h2>Coaching</h2>
+			<div class="border-subTitle"></div>
+		</div>
+		<div class="footer">
+			<ul>
+				<a href=""><li class="fa fa-twitter"></li></a>
+				<a href=""><li class="fa fa-instagram"></li></a>
+				<a href=""><li class="fa fa-youtube-play"></li></a>
+				<a href=""><li class="fa fa-github"></li></a>
+			</ul>
+		</div>
+	</body>
+</html>
